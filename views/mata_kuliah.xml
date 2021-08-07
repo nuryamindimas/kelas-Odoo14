@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="mata_kuliah_tree">
+            <field name="name">mata.kuliah.tree</field>
+            <field name="model">mata.kuliah</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <field name="partner_id"/>
+                    <field name="kelas_ids"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="mata_kuliah_form">
+            <field name="name">mata.kuliah.form</field>
+            <field name="model">mata.kuliah</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="kode"/>
+                                <field name="partner_id"/>
+                                <field name="kelas_ids"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mata_kuliah_kanban_view">
+            <field name="name">mata.kuliah.kanban</field>
+            <field name="model">mata.kuliah</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                Nama Mata Kuliah: <field name="name"/> <br></br>
+                                Kode Mata Kuliah: <field name="kode"/><br></br>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+    </record>
+
+        
+        <record model="ir.actions.act_window" id="mata_kuliah_action">
+            <field name="name">Mata Kuliah</field>
+            <field name="res_model">mata.kuliah</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="dosen_action">
+            <field name="name">dosen</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_dosen', '=', 'True')]</field>
+        </record>
+        
+
+        <menuitem 
+            id="main_polban_polban"
+            name="Polban"
+        />
+
+        <menuitem 
+            id="menu_mata_kuliah"
+            name="Mata Kuliah"
+            parent="main_polban_polban"
+        />
+
+        <menuitem 
+            id="submenu_mata_kuliah"
+            name="Mata Kuliah"
+            parent="menu_mata_kuliah"
+
+            action="mata_kuliah_action"
+        />
+
+        <menuitem
+            id="sub_menu_dosen"
+            name="dosen"
+            parent="contacts.menu_contacts"
+            action="dosen_action"
+        />
+
+    </data>
+</odoo>
