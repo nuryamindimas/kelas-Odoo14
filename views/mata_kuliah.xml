@@ -8,8 +8,6 @@
                 <tree>
                     <field name="name"/>
                     <field name="kode"/>
-                    <field name="partner_id"/>
-                    <field name="kelas_ids"/>
                 </tree>
             </field>
         </record>
@@ -75,7 +73,7 @@
 
         <menuitem 
             id="main_polban_polban"
-            name="Polban"
+            name="Kelas"
         />
 
         <menuitem 

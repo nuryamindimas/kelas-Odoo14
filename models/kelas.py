@@ -9,7 +9,7 @@ class Kelas(models.Model):
     partner_id = fields.One2many(
         comodel_name='res.partner', 
         inverse_name='kelas_id', 
-        string='partner id')
+        string='Mahasiswa')
     
 
     wali_kelas = fields.Many2one(

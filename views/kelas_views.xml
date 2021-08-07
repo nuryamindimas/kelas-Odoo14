@@ -8,9 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="partner_id"/>
                     <field name="wali_kelas"/>
-                    <field name="matkuls"/>
                 </tree>
             </field>
         </record>
@@ -69,7 +67,7 @@
 
          <menuitem 
             id="main_polban_polban"
-            name="Polban"
+            name="Kelas"
         />
 
         <menuitem 

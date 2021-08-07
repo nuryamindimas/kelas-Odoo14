@@ -28,7 +28,7 @@
         'views/templates.xml',
         'views/kelas_views.xml',
         'views/mata_kuliah.xml',
-        # 'views/dosen.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
