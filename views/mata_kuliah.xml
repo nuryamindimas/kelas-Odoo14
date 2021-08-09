@@ -46,7 +46,7 @@
                     <field name="kode"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div>
+                            <div class = "oe_kanban oe_kanban_global_click ">
                                 Nama Mata Kuliah: <field name="name"/> <br></br>
                                 Kode Mata Kuliah: <field name="kode"/><br></br>
                             </div>
@@ -56,7 +56,22 @@
             </field>
     </record>
 
-        
+    <!-- <record id="search_all_matkul" model="ir.ui.view"> 
+        <field name="model">mata.kuliah</field> 
+        <field name="arch" type="xml"> 
+            <search> 
+                <field name="name" /> 
+                <field name="category_id" filter_domain="[('category_id', 'child_of', self)]" /> 
+                <field name="bank_ids" widget="many2one" /> 
+                <filter name="suppliers" string="Suppliers" domain="[('supplier_rank', '>', 0)]" />
+                <group expand="0" string="Group By">
+                    <filter string="Country" name="country" 
+                    context="{'group_by':'country_id'}"/>
+                </group>
+            </search> 
+        </field> 
+    </record> -->
+            
         <record model="ir.actions.act_window" id="mata_kuliah_action">
             <field name="name">Mata Kuliah</field>
             <field name="res_model">mata.kuliah</field>
@@ -80,19 +95,21 @@
             id="menu_mata_kuliah"
             name="Mata Kuliah"
             parent="main_polban_polban"
+
+            action="mata_kuliah_action"
         />
 
-        <menuitem 
+        <!-- <menuitem 
             id="submenu_mata_kuliah"
             name="Mata Kuliah"
             parent="menu_mata_kuliah"
 
             action="mata_kuliah_action"
-        />
+        /> -->
 
         <menuitem
             id="sub_menu_dosen"
-            name="dosen"
+            name="Dosen"
             parent="contacts.menu_contacts"
             action="dosen_action"
         />

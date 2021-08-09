@@ -25,9 +25,10 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
         'views/kelas_views.xml',
         'views/mata_kuliah.xml',
+        'views/report_template.xml',
+        'views/report_mahasiswa.xml',
         
     ],
     # only loaded in demonstration mode

@@ -49,7 +49,7 @@
                 <field name="wali_kelas"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div>
+                        <div class = "oe_kanban oe_kanban_global_click ">
                             Nama Kelas : <field name="name"/> <br></br>
                             Wali Kelas : <field name="wali_kelas"/><br></br>
                         </div>
@@ -74,15 +74,16 @@
             id="menu_kelas_kelas"
             name="Kelas"
             parent="main_polban_polban"
+            action="kelas_kelas_action"
         />
 
-        <menuitem 
+        <!-- <menuitem 
             id="submenu_kelas_kelas"
             name="Kelas"
             parent="menu_kelas_kelas"
 
             action="kelas_kelas_action"
-        />
+        /> -->
 
     </data>
 </odoo>

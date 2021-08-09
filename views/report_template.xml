@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <h1>Report </h1>
+                        
+                        <center ><img t-if="doc.image_1920" t-att-src="image_data_uri(doc.image_1920)" width="200"/></center>
+                        <br></br>
+                        <p> Nama    : <t t-esc="doc.name"/></p>
+                        <p> kelas   : <t t-esc="doc.kelas_id.name"/></p>
+                        <p> umur    : <t t-esc="doc.age_days"/></p>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                <th>Mata Kuliah</th>
+                                <th>kode</th>
+                                <th>Dosen pengampu</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr t-foreach="doc.kelas_id.matkuls" t-as="rent" >
+                                    <td><t t-esc="rent.name" /></td>
+                                    <td><t t-esc="rent.kode" /></td>
+                                    <td><t t-esc="rent.partner_id.name" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
